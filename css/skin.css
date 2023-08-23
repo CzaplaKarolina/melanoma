@@ -211,8 +211,8 @@ MEDIA QUERIES
 
 
 .side-margin {
-	margin-left: 30%;
-	margin-right: 30%;
+	margin-left: 20%;
+	margin-right: 20%;
 }
 
 
@@ -350,7 +350,7 @@ input {
 }
 
 li, ol {
-	font-size: 18px;
+	font-size: 20px;
 }
 
 .fname-font {

@@ -6,7 +6,7 @@ SKIN_CLASSES = {
   2: 'bkl, Benign Keratosis',
   3: 'df, Dermatofibroma',
   4: 'mel, Melanoma',
-  5: 'nv, Melanocytic Nevi',
+  5: 'nv, Znamię melanocytowe (Melanocytic Nevi)',
   6: 'vasc, Vascular skin lesion'
 
 };
