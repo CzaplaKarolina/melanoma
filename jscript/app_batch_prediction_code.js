@@ -58,7 +58,7 @@ async function model_makePrediction(fname) {
 		}).slice(0, 3);
 		
 	// Append the file name to the prediction list
-	$("#prediction-list").append(`<li class="w3-text-blue fname-font" style="list-style-type:none;">
+	$("#prediction-list").append(`<li class="w3-text-purple fname-font" style="list-style-type:none;">
 	${fname}</li>`);
 	
 	//$("#prediction-list").empty();
