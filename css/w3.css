@@ -59,7 +59,7 @@ table,th,td{border:none}.w3-table-all{border:1px solid #ccc}
 .w3-ripple{position:relative;overflow:hidden}
 .w3-ripple:after{content:"";background:#ccc;position:absolute;padding:300%;bottom:0;left:0;opacity:0;transition:0.8s}
 .w3-ripple:active:after{padding:0;opacity:1;transition:0s}
-.w3-badge,.w3-tag,.w3-sign{background-color:#000;color:#fff;display:inline-block;padding-left:8px;padding-right:8px;text-align:center}
+.w3-badge,.w3-tag,.w3-sign{background-color:#000;color:#fff;display:inline-block;padding-left:80px;padding-right:80px;text-align:center}
 .w3-badge{border-radius:50%}
 ul.w3-ul{list-style-type:none;padding:0;margin:0}
 ul.w3-ul li{padding:6px 2px 6px 16px;border-bottom:1px solid #ddd}
@@ -193,11 +193,11 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
 .w3-border-top{border-top:1px solid #ccc!important}.w3-border-bottom{border-bottom:1px solid #ccc!important}
 .w3-border-left{border-left:1px solid #ccc!important}.w3-border-right{border-right:1px solid #ccc!important}
 .w3-margin{margin:16px!important}.w3-margin-0{margin:0!important}
-.w3-margin-top{margin-top:16px!important}.w3-margin-bottom{margin-bottom:16px!important}
+.w3-margin-top{margin-top:16px!important}.w3-margin-bottom{margin-bottom:30px!important}
 .w3-margin-left{margin-left:16px!important}.w3-margin-right{margin-right:16px!important}
 .w3-section{margin-top:16px!important;margin-bottom:16px!important}
 .w3-padding-tiny{padding:2px 4px!important}.w3-padding-small{padding:4px 8px!important}
-.w3-padding-medium,.w3-padding,.w3-form{padding:8px 16px!important}
+.w3-padding-medium,.w3-padding,.w3-form{padding:8px 80px!important}
 .w3-padding-large{padding:12px 24px!important}.w3-padding-xlarge{padding:16px 32px!important}
 .w3-padding-xxlarge{padding:24px 48px!important}.w3-padding-jumbo{padding:32px 64px!important}
 .w3-padding-4,.w3-padding-hor-4{padding-top:4px!important;padding-bottom:4px!important}
