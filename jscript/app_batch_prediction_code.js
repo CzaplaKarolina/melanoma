@@ -11,6 +11,59 @@
 //#################################################################################
 
 
+function simulateClick(tabID) {
+	
+	document.getElementById(tabID).click();
+}
+
+
+
+function predictOnLoad() {
+	
+	// Simulate a click on the predict button
+	setTimeout(simulateClick.bind(null,'predict-button'), 500);
+}
+
+
+
+
+
+
+// LOAD THE MODEL
+
+let model;
+(async function () {
+	
+    model = await tf.loadModel('https://czaplakarolina.github.io/melanoma/final_model_kaggle_version1/model.json');
+    $("#selected-image").attr("src", "https://czaplakarolina.github.io/melanoma/assets/doctor.png")
+	
+	// Hide the model loading spinner
+	// This line of html gets hidden:
+	// <div class="progress-bar">Ai is Loading...</div>
+	$('.progress-bar').hide();
+	
+	
+	// Simulate a click on the predict button.
+	// Make a prediction on the default front page image.
+	predictOnLoad();
+	
+	
+	
+})();
+
+
+$("#image-selector").change(async function () {
+	
+	// the FileReader reads one image at a time
+	fileList = $("#image-selector").prop('files');
+	
+	//$("#prediction-list").empty();
+	
+	// Start predicting
+	// This function is in the app_batch_prediction_code.js file.
+	model_processArray(fileList);
+	
+});
 
 
 
