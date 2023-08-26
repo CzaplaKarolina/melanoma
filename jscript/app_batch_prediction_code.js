@@ -1,18 +1,54 @@
 
-
-
-
-
-
 //################################################################################
 
 // ### 1. MAKE A PREDICTION ON THE IMAGE OR MULTIPLE IMAGES THAT THE USER SUBMITS
 
 //#################################################################################
 
+function simulateClick(tabID) {
+	
+	document.getElementById(tabID).click();
+}
 
+function predictOnLoad() {
+	
+	// Simulate a click on the predict button
+	setTimeout(simulateClick.bind(null,'predict-button'), 500);
+}
 
+// LOAD THE MODEL
 
+let model;
+(async function () {
+	
+	model = await tf.loadModel('https://czaplakarolina.github.io/melanoma/final_model_kaggle_version1/model.json');
+	$("#selected-image").attr("src", "https://czaplakarolina.github.io/melanoma/assets/doctor.png");
+	
+	// Hide the model loading spinner
+	// This line of html gets hidden:
+	// <div class="progress-bar">Ai is Loading...</div>
+	$('.progress-bar').hide();
+	
+	
+	// Simulate a click on the predict button.
+	// Make a prediction on the default front page image.
+	predictOnLoad();
+	
+	
+	
+})();
+$("#image-selector").change(async function () {
+	
+	// the FileReader reads one image at a time
+	fileList = $("#image-selector").prop('files');
+	
+	//$("#prediction-list").empty();
+	
+	// Start predicting
+	// This function is in the app_batch_prediction_code.js file.
+	model_processArray(fileList);
+	
+});
 
 // the model images have size 96x96
 
@@ -93,8 +129,6 @@ async function model_makePrediction(fname) {
 	});
 
 
-
-
 	// Add a space after the prediction for each image
 	$("#prediction-list").append(`<br>`);
 		
@@ -113,7 +147,6 @@ async function model_makePrediction(fname) {
 // This tutorial explains how to use async, await and promises to manage delays.
 // Tutorial: https://blog.lavrton.com/javascript-loops-how-to-handle-async-await-6252dd3c795
 // =====================
-
 
 
 function model_delay() {

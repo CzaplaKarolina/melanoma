@@ -1,5 +1,4 @@
 
-
 SKIN_CLASSES = {
   0: 'akiec, Rogowacenie słoneczne (Actinic Keratoses/Solar Keratoses) lub Nabłoniak (intraepithelial Carcinoma - Bowen’s disease)',
   1: 'bcc, Nabłoniak podstawnokomórkowy (Basal Cell Carcinoma)',
