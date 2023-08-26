@@ -1,5 +1,5 @@
 // Code is based on a YouTube tutorial by deeplizard
-// https://www.youtube.com/watch?v=HEQDRWMK6yYpadding-left:8
+// https://www.youtube.com/watch?v=HEQDRWMK6yY
 
 
 
@@ -10,6 +10,7 @@ function simulateClick(tabID) {
 	
 	document.getElementById(tabID).click();
 }
+
 
 $("#image-selector").change(function () {
 	let reader = new FileReader();
@@ -38,9 +39,9 @@ $("#image-selector").change(function () {
 let model;
 (async function () {
 	
-	model = await tf.loadModel('https://czaplakarolina.github.io/melanoma/final_model_kaggle_version1/model.json');
-	$("#selected-image").attr("src", "https://czaplakarolina.github.io/melanoma/assets/samplepic.jpg")
-	
+    model = await tf.loadModel('https://czaplakarolina.github.io/melanoma/final_model_kaggle_version1/model.json');
+    $("#selected-image").attr("src", "https://czaplakarolina.github.io/melanoma/assets/samplepic.jpg")
+    
 	
 	// Simulate a click on the predict button
 	predictOnLoad();
@@ -110,12 +111,3 @@ top5.forEach(function (p) {
 	
 	
 });
-
-
-
-
-
-
-
-
-

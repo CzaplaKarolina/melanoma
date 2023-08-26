@@ -7,6 +7,7 @@
 
 //#############################################################
 
+
 // Define 2 helper functions
 
 function simulateClick(tabID) {
@@ -15,19 +16,25 @@ function simulateClick(tabID) {
 }
 
 
+
 function predictOnLoad() {
 	
 	// Simulate a click on the predict button
 	setTimeout(simulateClick.bind(null,'predict-button'), 500);
 }
 
+
+
+
+
+
 // LOAD THE MODEL
 
 let model;
 (async function () {
 	
-	model = await tf.loadModel('https://czaplakarolina.github.io/melanoma/final_model_kaggle_version1/model.json');
-	$("#selected-image").attr("src", "https://czaplakarolina.github.io/melanoma/assets/samplepic.jpg");
+    model = await tf.loadModel('https://czaplakarolina.github.io/melanoma/final_model_kaggle_version1/model.json');
+    $("#selected-image").attr("src", "https://czaplakarolina.github.io/melanoma/assets/samplepic.jpg")
 	
 	// Hide the model loading spinner
 	// This line of html gets hidden:
@@ -43,6 +50,8 @@ let model;
 	
 })();
 
+
+
 	
 
 //######################################################################
@@ -50,6 +59,8 @@ let model;
 // ### 2. MAKE A PREDICTION ON THE FRONT PAGE IMAGE WHEN THE PAGE LOADS
 
 //######################################################################
+
+
 
 // The model images have size 96x96
 
@@ -122,7 +133,9 @@ $("#predict-button").click(async function () {
 
 // Then direct the code execution to app_batch_prediction_code.js
 
-//#####################################################################
+//######################################################################
+
+
 
 
 // This listens for a change. It fires when the user submits images.
@@ -139,8 +152,3 @@ $("#image-selector").change(async function () {
 	model_processArray(fileList);
 	
 });
-
-
-
-
-
