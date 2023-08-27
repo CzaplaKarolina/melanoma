@@ -16,11 +16,11 @@ function simulateClick(tabID) {
 	document.getElementById(tabID).click();
 }
 
-// function predictOnLoad() {
+function predictOnLoad() {
 	
-// 	// Simulate a click on the predict button
-// 	setTimeout(simulateClick.bind(null,'predict-button'), 500);
-// }
+	// Simulate a click on the predict button
+	setTimeout(simulateClick.bind(null,'predict-button'), 500);
+}
 
 
 // LOAD THE MODEL
@@ -39,7 +39,7 @@ let model;
 	
 	// Simulate a click on the predict button.
 	// Make a prediction on the default front page image.
-	// predictOnLoad();
+	predictOnLoad();
 	
 	
 	
@@ -226,7 +226,7 @@ async function model_processArray(array) {
 		reader.readAsDataURL(file);
 
 	}
-//33333333333333333333333333
+
 	
 }
 
