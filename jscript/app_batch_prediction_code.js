@@ -99,8 +99,8 @@ async function model_makePrediction(fname) {
 
 	$("#prediction-list").append(`<li class="w3-text-purple fname-font" style="list-style-type:none;">Plik poddany analizie:  
 	${fname}</li>`);
-	$("#prediction-list_history").append(`<li class="w3-text-purple fname-font" style="list-style-type:none;">Plik poddany analizie:  
-	${fname}. <br> Data i godzina wczytania pliku: ${formattedDate}</li>`);
+	// $("#prediction-list_history").append(`<li class="w3-text-purple fname-font" style="list-style-type:none;">Plik poddany analizie:  
+	// ${fname}. <br> Data i godzina wczytania pliku: ${formattedDate}</li>`);
 	top5.forEach(function (p, index) {
 		let link = '';
 		switch (p.className) {
@@ -131,7 +131,7 @@ async function model_makePrediction(fname) {
 			
 		$("#prediction-list").append(`<li style="list-style-type:none;"><a href="${link}">${index + 1}. ${p.className}: ${p.probability.toFixed(3)}</a></li>`);
 
-		$("#prediction-list_history").append(`<li style="list-style-type:none;"><a href="${link}">${index + 1}. ${p.className}: ${p.probability.toFixed(3)}</a></li>`);
+		// $("#prediction-list_history").append(`<li style="list-style-type:none;"><a href="${link}">${index + 1}. ${p.className}: ${p.probability.toFixed(3)}</a></li>`);
 
 	});
 

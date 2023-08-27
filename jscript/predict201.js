@@ -34,8 +34,6 @@ $("#image-selector").change(function () {
 });
 
 
-
-
 let model;
 (async function () {
 	
