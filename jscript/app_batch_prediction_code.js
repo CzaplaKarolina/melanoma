@@ -29,7 +29,7 @@ let model;
 (async function () {
 	
     model = await tf.loadModel('https://czaplakarolina.github.io/melanoma/final_model_kaggle_version1/model.json');
-    // $("#selected-image").attr("src", "https://czaplakarolina.github.io/melanoma/assets/doctor.png")
+     $("#selected-image").attr("src", "https://czaplakarolina.github.io/melanoma/assets/samplepic.jpg")
 	
 	// Hide the model loading spinner
 	// This line of html gets hidden:
