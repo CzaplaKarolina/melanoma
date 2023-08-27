@@ -2,20 +2,15 @@
 	background-color: #191970;
 	
 }
-
-
 .topp-margin {
 	margin-top: 40px;
 }
-
 
 ul {
 	
 	padding: 15px;
 }
 
-
-  
 .space-letters {
 	letter-spacing: .05em;
 }
@@ -25,16 +20,13 @@ ul {
 display: inline-block;
 }
 
-
 .dont-break-out {
-	/*These are technically the same but use both 
-	to ensure all browsers are supported*/
 	overflow-wrap: break-word;
 	word-wrap: break-word;
 }
 
 .bground-color {
-	background-color: #F8F8F8; /* rgb(248,248,248) */
+	background-color: #F8F8F8; 
 }
 
 
@@ -43,7 +35,7 @@ p {
 }
 
 .text-color {
-	color: #404040; /* rgb(64,64,64) */
+	color: #404040; 
 }
 
 
@@ -67,19 +59,14 @@ p {
 
 }
 
-
-
-
 a:hover { 
-  color: #ff9999; /* rgb(0, 255, 191) */
+  color: #ff9999; 
 }
 
 .test:hover {
 	color: #FF0000;
 	background-color: #FF0000;
 }
-
-
 
 
 li {
@@ -208,10 +195,6 @@ MEDIA QUERIES
 .mobile-bar {
 	display: block;
 }
-
-
-
-
 
 
 } /*Close Media Query*/

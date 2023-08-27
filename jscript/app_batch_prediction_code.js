@@ -1,17 +1,14 @@
 
-
-
 function simulateClick(tabID) {
 	
 	document.getElementById(tabID).click();
 }
 
-function predictOnLoad() {
+// function predictOnLoad() {
 	
-	// Simulate a click on the predict button
-	setTimeout(simulateClick.bind(null,'predict-button'), 500);
-}
-
+// 	// Simulate a click on the predict button
+// 	setTimeout(simulateClick.bind(null,'predict-button'), 500);
+// }
 
 // LOAD THE MODEL
 
@@ -19,7 +16,7 @@ let model;
 (async function () {
 	
     model = await tf.loadModel('https://czaplakarolina.github.io/melanoma/final_model_kaggle_version1/model.json');
-     $("#selected-image").attr("src", "https://czaplakarolina.github.io/melanoma/assets/samplepic.jpg")
+    //  $("#selected-image").attr("src", "https://czaplakarolina.github.io/melanoma/assets/doctor.png")
 	
 	// Hide the model loading spinner
 	// This line of html gets hidden:
@@ -32,9 +29,7 @@ let model;
 	predictOnLoad();
 	
 	
-	
 })();
-
 
 $("#image-selector").change(async function () {
 	
@@ -48,8 +43,6 @@ $("#image-selector").change(async function () {
 	model_processArray(fileList);
 	
 });
-
-
 
 // the model images have size 96x96
 
@@ -99,8 +92,8 @@ async function model_makePrediction(fname) {
 
 	$("#prediction-list").append(`<li class="w3-text-purple fname-font" style="list-style-type:none;">Plik poddany analizie:  
 	${fname}</li>`);
-	// $("#prediction-list_history").append(`<li class="w3-text-purple fname-font" style="list-style-type:none;">Plik poddany analizie:  
-	// ${fname}. <br> Data i godzina wczytania pliku: ${formattedDate}</li>`);
+	$("#prediction-list_history").append(`<li class="w3-text-purple fname-font" style="list-style-type:none;">Plik poddany analizie:  
+	${fname}. <br> Data i godzina wczytania pliku: ${formattedDate}</li>`);
 	top5.forEach(function (p, index) {
 		let link = '';
 		switch (p.className) {
@@ -131,7 +124,7 @@ async function model_makePrediction(fname) {
 			
 		$("#prediction-list").append(`<li style="list-style-type:none;"><a href="${link}">${index + 1}. ${p.className}: ${p.probability.toFixed(3)}</a></li>`);
 
-		// $("#prediction-list_history").append(`<li style="list-style-type:none;"><a href="${link}">${index + 1}. ${p.className}: ${p.probability.toFixed(3)}</a></li>`);
+		$("#prediction-list_history").append(`<li style="list-style-type:none;"><a href="${link}">${index + 1}. ${p.className}: ${p.probability.toFixed(3)}</a></li>`);
 
 	});
 
@@ -211,7 +204,7 @@ async function model_processArray(array) {
 		file = item;
 		
 		// Print the name of the file to the console
-        //console.log("i: " + " - " + file.name);
+        // console.log("i: " + " - " + file.name);
 			
 		reader.readAsDataURL(file);
 
