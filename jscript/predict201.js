@@ -41,7 +41,7 @@ let model;
 	
     model = await tf.loadModel('https://czaplakarolina.github.io/melanoma/final_model_kaggle_version1/model.json');
     $("#selected-image").attr("src", "https://czaplakarolina.github.io/melanoma/assets/samplepic.jpg")
-    
+	
 	
 	// Simulate a click on the predict button
 	predictOnLoad();

@@ -1,16 +1,6 @@
 
 
 
-
-
-
-//################################################################################
-
-// ### 1. MAKE A PREDICTION ON THE IMAGE OR MULTIPLE IMAGES THAT THE USER SUBMITS
-
-//#################################################################################
-
-
 function simulateClick(tabID) {
 	
 	document.getElementById(tabID).click();
