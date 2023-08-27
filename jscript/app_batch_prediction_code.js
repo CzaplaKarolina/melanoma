@@ -16,17 +16,11 @@ function simulateClick(tabID) {
 	document.getElementById(tabID).click();
 }
 
-
-
-function predictOnLoad() {
+// function predictOnLoad() {
 	
-	// Simulate a click on the predict button
-	setTimeout(simulateClick.bind(null,'predict-button'), 500);
-}
-
-
-
-
+// 	// Simulate a click on the predict button
+// 	setTimeout(simulateClick.bind(null,'predict-button'), 500);
+// }
 
 
 // LOAD THE MODEL
@@ -35,7 +29,7 @@ let model;
 (async function () {
 	
     model = await tf.loadModel('https://czaplakarolina.github.io/melanoma/final_model_kaggle_version1/model.json');
-    $("#selected-image").attr("src", "https://czaplakarolina.github.io/melanoma/assets/doctor.png")
+    // $("#selected-image").attr("src", "https://czaplakarolina.github.io/melanoma/assets/doctor.png")
 	
 	// Hide the model loading spinner
 	// This line of html gets hidden:
@@ -45,7 +39,7 @@ let model;
 	
 	// Simulate a click on the predict button.
 	// Make a prediction on the default front page image.
-	predictOnLoad();
+	// predictOnLoad();
 	
 	
 	
@@ -101,7 +95,7 @@ async function model_makePrediction(fname) {
 		.map(function (p, i) { // this is Array.map
 			return {
 				probability: p,
-				className: TARGET_CLASSES[i] // we are selecting the value from the obj
+				className: TARGET_CLASSES[i] 
 			};
 				
 			
@@ -110,14 +104,15 @@ async function model_makePrediction(fname) {
 				
 		}).slice(0, 3);
 		
-	// Append the file name to the prediction list
+	const now = new Date(); // Aktualna data i czas
+	const formattedDate = now.toLocaleString(); // Sformatowana data i czas
+
 	$("#prediction-list").append(`<li class="w3-text-purple fname-font" style="list-style-type:none;">Plik poddany analizie:  
 	${fname}</li>`);
-	
-	//$("#prediction-list").empty();
+	$("#prediction-list_history").append(`<li class="w3-text-purple fname-font" style="list-style-type:none;">Plik poddany analizie:  
+	${fname}. <br> Data i godzina wczytania pliku: ${formattedDate}</li>`);
 	top5.forEach(function (p, index) {
 		let link = '';
-	
 		switch (p.className) {
 			case 'akiec, Rogowacenie słoneczne (Actinic Keratoses/Solar Keratoses) lub Nabłoniak (intraepithelial Carcinoma - Bowen’s disease)':
 				link = 'aciec.html';
@@ -142,14 +137,20 @@ async function model_makePrediction(fname) {
 				break;
 		}
 	
+
+			
 		$("#prediction-list").append(`<li style="list-style-type:none;"><a href="${link}">${index + 1}. ${p.className}: ${p.probability.toFixed(3)}</a></li>`);
+
+		$("#prediction-list_history").append(`<li style="list-style-type:none;"><a href="${link}">${index + 1}. ${p.className}: ${p.probability.toFixed(3)}</a></li>`);
+
 	});
 
-
-	// Add a space after the prediction for each image
 	$("#prediction-list").append(`<br>`);
 		
 }
+
+
+
 
 
 
@@ -171,8 +172,6 @@ function model_delay() {
 	
 	return new Promise(resolve => setTimeout(resolve, 200));
 }
-
-
 async function model_delayedLog(item, dataURL) {
 	
 	// We can await a function that returns a promise.
@@ -180,7 +179,6 @@ async function model_delayedLog(item, dataURL) {
 	// Here it does not actually serve a purpose.
 	// It's here to show how a delay like this can be implemented.
 	await model_delay();
-	
 	// display the user submitted image on the page by changing the src attribute.
 	// The problem is here. Too slow.
 	$("#selected-image").attr("src", dataURL);
@@ -189,7 +187,6 @@ async function model_delayedLog(item, dataURL) {
 	// log the item only after a delay.
 	//console.log(item);
 }
-
 // This step by step tutorial explains how to use FileReader.
 // Tutorial: http://tutorials.jenkov.com/html5/file-api.html
 
@@ -227,5 +224,9 @@ async function model_processArray(array) {
         //console.log("i: " + " - " + file.name);
 			
 		reader.readAsDataURL(file);
+
 	}
+//33333333333333333333333333
+	
 }
+
